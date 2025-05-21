@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from '../services/api';
 import {GSpaceCard} from "../components/GSpace";
 import { SearchAndFilter } from "../components/common";
 import { PlusCircle } from "lucide-react";
@@ -23,7 +23,7 @@ export default function GSpace() {
       }
 
       try {
-        const response = await axios.get("/api/gspaces", {
+        const response = await api.get("/gspaces", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

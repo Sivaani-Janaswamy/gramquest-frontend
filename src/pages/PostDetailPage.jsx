@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../services/api';
 import moment from 'moment';
 import {Card} from '../components/common';
 import {PostHeader, PostContent} from '../components/Posts';
@@ -107,7 +107,7 @@ const PostDetailPage = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const { data } = await axios.get(`/api/posts/${postId}`, {
+        const { data } = await api.get(`/posts/${postId}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         });
         setPost(data);
@@ -121,8 +121,8 @@ const PostDetailPage = () => {
 
   const handleAddReply = async (parentReplyId, comment) => {
     try {
-      const { data } = await axios.post(
-        `/api/posts/${postId}/reply`,
+      const { data } = await api.post(
+        `/posts/${postId}/reply`,
         { userId, comment, parentReplyId },
         { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
       );

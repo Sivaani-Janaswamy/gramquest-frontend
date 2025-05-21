@@ -55,7 +55,7 @@ npm start
 yarn start
 ````
 
-The application will typically open in your browser at `http://localhost:3000`.
+The application will typically open in your browser at `${import.meta.env.VITE_REACT_APP_API_URL}`.
 
 -----
 

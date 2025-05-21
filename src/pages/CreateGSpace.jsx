@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from '../services/api';
 
 export default function CreateGSpace() {
   const [title, setTitle] = useState("");
@@ -18,8 +18,8 @@ export default function CreateGSpace() {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.post(
-        "/api/gspaces",
+      const response = await api.post(
+        "/gspaces",
         { title, description, tags: tagsArray },
         {
           headers: {

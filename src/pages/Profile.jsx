@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
-import axios from 'axios';
+import api from '../services/api';
 import userPlaceholder from '../assets/user.png';
-import {ProfileCard} from '../components/Profile';
-import {PostList} from '../components/Posts';
+import { ProfileCard } from '../components/Profile';
+import { PostList } from '../components/Posts';
 
 const Profile = () => {
   const { user, isAuthenticated, updateUserProfilePic } = useAuth();
@@ -19,7 +19,6 @@ const Profile = () => {
   }, [user]);
 
   const handleImageChange = async (e) => {
-    const token = localStorage.getItem('token');
     const file = e.target.files[0];
 
     if (file && file.type.startsWith('image/')) {
@@ -30,12 +29,11 @@ const Profile = () => {
       formData.append('profilePic', file);
 
       try {
-        const response = await axios.post(
-          `http://localhost:3000/api/users/upload-profile-pic`,
+        const response = await api.post(
+          '/users/upload-profile-pic',
           formData,
           {
             headers: {
-              'Authorization': `Bearer ${token}`,
               'Content-Type': 'multipart/form-data',
             },
           }

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+import api from '../../services/api';
 import { jwtDecode } from 'jwt-decode';
 
 const PostForm = ({ posts, setPosts }) => {
@@ -54,7 +54,7 @@ const PostForm = ({ posts, setPosts }) => {
     files.forEach((file) => formData.append('attachments', file));
 
     try {
-      const response = await axios.post('/api/posts', formData, {
+      const response = await api.post('/posts', formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

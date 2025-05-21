@@ -16,7 +16,7 @@ const App = () => {
       navigate('/login');
     });
   };
-
+  console.log('API URL:', import.meta.env.VITE_REACT_APP_API_URL);
   return (
     <>
       <Navbar onLogout={handleLogout} />

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../services/api';
 
 const useFetchGSpace = (id) => {
   const [gspace, setGspace] = useState(null);
@@ -17,7 +17,7 @@ const useFetchGSpace = (id) => {
       setLoading(true);
       setError(null);
       try {
-        const response = await axios.get(`/api/gspaces/${id}`);
+        const response = await api.get(`/gspaces/${id}`);
         setGspace(response.data);
       } catch (fetchError) {
         setError("Failed to load the community space.");

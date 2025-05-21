@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
+import api from '../services/api';
 
 export const usePostData = () => {
   const [posts, setPosts] = useState([]);
@@ -8,18 +9,8 @@ export const usePostData = () => {
   const fetchPosts = async () => {
     if (isAuthenticated) {
       try {
-        const response = await fetch('http://localhost:3000/api/posts', {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem('authToken')}`,
-          },
-        });
-        if (response.ok) {
-          const data = await response.json();
-          setPosts(data);
-        } else {
-          console.error('Failed to fetch posts');
-          setPosts([]); // Clear posts on failure
-        }
+        const response = await api.get('/posts');
+        setPosts(response.data);
       } catch (error) {
         console.error('Error fetching posts:', error);
         setPosts([]); // Clear posts on error

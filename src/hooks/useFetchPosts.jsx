@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../services/api'
 
 const useFetchPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -10,7 +10,7 @@ const useFetchPosts = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get('/api/posts'); // Your API endpoint
+      const response = await api.get('/posts'); // Your API endpoint
       setPosts(response.data);
       setLoading(false);
     } catch (err) {

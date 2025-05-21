@@ -3,6 +3,11 @@
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+[![Last Commit](https://img.shields.io/github/last-commit/Sivaani-Janaswamy/gramquest-frontend)](https://github.com/Sivaani-Janaswamy/gramquest-frontend)
+[![Issues](https://img.shields.io/github/issues/Sivaani-Janaswamy/gramquest-frontend)](https://github.com/Sivaani-Janaswamy/gramquest-frontend/issues)
+[![Build](https://img.shields.io/github/actions/workflow/status/Sivaani-Janaswamy/gramquest-frontend/node.js.yml?branch=main)](https://github.com/Sivaani-Janaswamy/gramquest-frontend/actions)
+[![License](https://img.shields.io/github/license/Sivaani-Janaswamy/gramquest-frontend)](https://opensource.org/licenses/MIT)
+
 
 ## Quick Setup Guide
 
@@ -80,5 +85,3 @@ We welcome contributions\! Please follow these steps:
     git push origin feature/your-feature-name
     ```
 6.  **Open a Pull Request** from your forked repository's branch to the `main` branch of the original Gramquest Frontend repository.
-
-Please ensure your code adheres to existing coding standards and includes appropriate comments.

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import GSpaceTag from './GspaceTag';
+import GSpaceTag from './GSpaceTag';
 
 const GSpaceCard = ({ title, description, tags, slug }) => {
   const navigate = useNavigate();

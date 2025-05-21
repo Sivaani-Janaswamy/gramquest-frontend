@@ -1,2 +1,2 @@
-export {default as GSpaceTag} from './GspaceTag';
-export {default as GSpaceCard} from './GspaceCard';
+export {default as GSpaceTag} from './GSpaceTag';
+export {default as GSpaceCard} from './GSpaceCard';

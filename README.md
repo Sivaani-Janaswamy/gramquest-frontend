@@ -1,6 +1,3 @@
-Okay, here's a concise `README.md` file for your Gramquest frontend repository, following the same structure and brevity as the backend one.
-
-````markdown
 # Gramquest Frontend
 
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
@@ -85,6 +82,3 @@ We welcome contributions\! Please follow these steps:
 6.  **Open a Pull Request** from your forked repository's branch to the `main` branch of the original Gramquest Frontend repository.
 
 Please ensure your code adheres to existing coding standards and includes appropriate comments.
-
-```
-```
